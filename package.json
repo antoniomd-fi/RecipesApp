@@ -1,0 +1,19 @@
+{
+  "name": "recipesapp",
+  "version": "1.0.0",
+  "description": "recipes' browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniomd-fi/RecipesApp.git"
+  },
+  "author": "Edwin Castillo, Alejandro Gerónimo, Gerardo Hernández, Antonio Martin, Victor Sosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoniomd-fi/RecipesApp/issues"
+  },
+  "homepage": "https://github.com/antoniomd-fi/RecipesApp#readme"
+}
