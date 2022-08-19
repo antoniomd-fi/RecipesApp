@@ -1,0 +1,115 @@
+/* NAV BAR*/
+
+header{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: sticky;
+    top: 20px;
+    display: none;
+}
+.nav-bar{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 20px;
+    background-image: url(../assets/background3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* BANNER SECTION*/
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-titles {
+
+    margin-bottom: 80px;
+}
+
+.banner-titles .title {
+    font-size: 4rem;
+}
+
+.banner-titles .subtitle {
+    font-size: 1.7rem;
+}
+
+.banner-browser {
+    display: flex;
+    
+}
+
+.searh-button {
+    height: 80px;
+    width: 160px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.7rem;
+    margin-left: 10px;
+}
+
+.search-input {
+    display: flex;
+    width: 900px;
+    height: 80px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.search-input i {
+    font-size: 1.9rem;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.search-input input {
+    width: 800px;
+    margin-left: 15px;
+    border: #FFFFFF;
+    font-size: 1.9rem;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.search-input input::placeholder {
+    font-size: 1.9rem;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.search-input input:focus {
+    outline: none;
+}
+
+.banner-span{
+    font-size: 1.4rem;
+    margin-top: 25px;
+    color: #FFFFFF;
+}
+
+.banner-span a{
+    color: #9C0F48;
+}
+
+.banner-span a:hover{
+    text-decoration: none;
+    color: #e0578e;
+}
