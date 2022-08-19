@@ -111,3 +111,12 @@ body {
     width: auto;
     height: auto;
 }
+
+.link-back{
+    color: var(--color-wine-400);
+    font-size: 1.2rem;
+}
+
+.link-back:hover{
+    color: var(--color-wine-400);
+}
