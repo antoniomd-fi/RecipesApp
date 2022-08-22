@@ -17,7 +17,7 @@ header{
     padding-top: 20px;
     background-color: rgba(0, 0, 0, 0.6);
     padding-bottom: 20px;
-    background-image: url(../assets/background1.jpg);
+    background-image: linear-gradient(rgba(5,7,12,0.55), rgba(5,7,12,0.55)), url(../assets/banner-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
