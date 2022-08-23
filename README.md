@@ -56,6 +56,10 @@ Install node modules and run the application.
 
 - [antoniomd-fi](https://github.com/antoniomd-fi)
 
+- [gerhercar21](https://github.com/gerhercar21)
+
+- [EduCastilloHerrera](https://github.com/EduCastilloHerrera)
+
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
