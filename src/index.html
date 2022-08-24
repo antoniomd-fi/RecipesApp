@@ -22,7 +22,7 @@
           <i class="bx bx-search"></i>
           <input type="text" placeholder="Search something delicious...">
         </div>
-        <button class="searh-button">Search</button>
+        <button class="searh-button" data-toggle="modal" data-target="#browserModalCenter">Search</button>
       </div>
       <div class="banner-span">
         <span>Are you hungry? Try with a <a href="">random</a> recipe!</span>
@@ -40,12 +40,33 @@
         <i class="bx bx-search"></i>
         <input type="text" placeholder="Search something delicious...">
       </div>
-      <button class="searh-button">Search</button>
+      <button class="searh-button" data-toggle="modal" data-target="#browserModalCenter">Search</button>
     </div>
     <div class="banner-span">
       <span>Are you hungry? Try with a <a href="">random</a> recipe!</span>
     </div>
   </main>
+
+  <div class="modal  fade" id="browserModalCenter" tabindex="-1" role="dialog" aria-labelledby="browserModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="browserModalLongTitle">Croatian lamb peka</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="modal-image"  alt="Croatian lamb peka image">
+          <!-- <span>I want to see the complete recipe...</span> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary modal-continue-button">See steps</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <section class="popular">
 
@@ -104,9 +125,6 @@
     </div>
   </section>
 
-  <section class="countries">
-
-  </section>
 
   <footer>
     <p>All rights reserved ©</p>

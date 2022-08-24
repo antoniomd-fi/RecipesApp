@@ -156,6 +156,104 @@ header{
     color: #e0578e;
 }
 
+@media (max-width:1200px){ 
+
+.banner-browser{
+    max-width: 980px;
+}
+    .searh-button {
+        width: auto;
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    
+    .search-input {
+        width: 800px;
+    }
+    
+    
+    .search-input input {
+        width: auto;
+        margin-left: 15px;
+    }
+
+    @media (max-width:970px){ 
+        .banner-browser{
+            max-width: auto;
+        }
+            .searh-button {
+                width: auto;
+                font-size: 1.4rem;
+                padding: 5px;
+            }
+            
+            .search-input {
+                width: auto;
+            }
+            
+            .search-input i {
+                font-size: 1.5rem;
+            }
+            
+            .search-input input {
+                width: auto;
+                margin-left: 15px;
+            }
+
+            .search-input input::placeholder {
+                font-size: 1.5rem;
+               
+            }
+    }
+
+    @media (max-width:576px){ 
+        .banner-browser{
+            flex-direction: column;
+            align-items: center;
+            
+        }
+            .searh-button {
+                width: 300px;
+                height: 35px;
+                font-size: 1.2rem;
+                padding: 5px;
+                margin-top: 10px;
+                border-radius: 2px;
+            }
+            
+            .search-input {
+                width: 360px;
+                height: 60px;
+            }
+            
+            .search-input i {
+                font-size: 1.3rem;
+            }
+            
+            .search-input input {
+                height: 40px;
+                max-width: 250px;
+            }
+
+            .search-input input::placeholder {
+                font-size: 1.1rem;
+               
+            }
+
+           .banner .title{
+                font-size: 1.8rem;
+            }
+            .banner .subtitle{
+                font-size: 1.3rem;
+            }
+
+            .banner-span{
+                font-size: 1.1rem;
+            }
+    }
+    
+}
+
 /*MOST POPULAR SECTION*/
 
 .popular{
@@ -198,7 +296,76 @@ header{
     margin-top: 130px;
 }
 
+@media (max-width:1300px){ 
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 9rem;
+    }
+}
 
+@media (max-width: 768px){ 
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 7rem;
+    }
+}
+
+/*MODAL*/
+
+.modal-content{
+    width: auto;
+}
+
+.modal-title{
+    color: #470D21;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.modal-body img{
+    border-radius: 10px;
+    max-width:600px;
+
+}
+.modal-continue-button{
+    background-color: #9C0F48;
+    border: none;
+}
+
+.modal-continue-button:hover{
+    color: #9C0F48;
+    background-color: #e2dcdc;
+    font-weight: 700;
+    
+}
+
+@media (max-width:980px){
+    .modal-content img{
+       width: 600px;
+    }
+
+}
+
+@media (max-width:880px){
+     .modal-content img{
+        width: 500px;
+     }
+
+}
+
+@media (max-width: 576px){
+     .modal-content img{
+        width: 400px;
+     }
+}
+
+
+
+@media (max-width:440px){ 
+    .modal-content img{
+        width: 330px;
+     }
+}
 /*FOOTER*/
 
 footer{
