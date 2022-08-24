@@ -1,6 +1,6 @@
 # RecipesApp
 
-App to search and consult different recipes.
+The best App to search and consult different recipes.
 
 This project is part of phase 2 of the Santander and BEDU scholarship.
 
@@ -52,10 +52,17 @@ Install node modules and run the application.
 <a name="authors"></a>
 ## 5. Authors
 
-- [VictorSosa-dev](https://www.github.com/VictorSosa-dev)
+- Victor Sosa [VictorSosa-dev](https://www.github.com/VictorSosa-dev)
 
-- [antoniomd-fi](https://github.com/antoniomd-fi)
+- Antonio Martin [antoniomd-fi](https://github.com/antoniomd-fi)
+
+- Gerardo Hernández [gerhercar21](https://github.com/gerhercar21)
+
+- Eduardo Castillo [EduCastilloHerrera](https://github.com/EduCastilloHerrera)
+
+- Alejandro Gerónimo [ElMandu](https://github.com/ElMandu)
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Index](https://i.imgur.com/4qYnd5n.jpeg)
+![App Popular](https://i.imgur.com/2eHmJAA.jpeg)
