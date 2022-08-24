@@ -24,7 +24,4 @@ img5.src = appleBlackberry;
 const img6 = document.getElementById('img-popular-6');
 img6.src = chocolateGateau;
 const modalExample = document.getElementById('modal-image')
-modalExample.src = modalExampleImage
-
-
-
+modalExample.src = modalExampleImage;
