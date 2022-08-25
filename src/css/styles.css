@@ -47,6 +47,7 @@ body {
     font-weight: 400;
     margin-bottom: 20px;
     color: var(--color-black);
+    text-align: justify;
 }
 
 /* title of Recipes and text of boton random */
