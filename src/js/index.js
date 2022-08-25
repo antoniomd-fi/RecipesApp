@@ -1,5 +1,6 @@
 import '../css/styles.css'
 import '../css/index.css'
+import '../css/random.css'
 import salmonTeriyaki from '../assets/salmon-teriyaki.jpg';
 import arrabiata from '../assets/arrabiata.jpg';
 import appleBlackberry from '../assets/Apple-Blackberry-Crumble.jpg';
@@ -25,3 +26,7 @@ const img6 = document.getElementById('img-popular-6');
 img6.src = chocolateGateau;
 const modalExample = document.getElementById('modal-image')
 modalExample.src = modalExampleImage;
+
+
+const random1 = document.getElementById('img-random-1');
+random1.src = salmonTeriyaki;
