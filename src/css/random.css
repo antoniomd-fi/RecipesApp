@@ -1,0 +1,173 @@
+@import "styles.css";
+
+
+/* Random Page */
+
+.back {
+    margin-top: 3%;
+}
+
+.back a{
+    padding-left: 8%;
+    color: #595959;
+}
+
+.random-head {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+.random-head p {
+    line-height: 13px;
+}
+
+.random-head p a {
+    color: #9C0F48;
+    text-decoration: none;
+}
+
+.row {
+    padding: 0 0 4rem 0;
+    gap: 3rem;
+}
+
+.card {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+    transition: 0.55s;
+}
+
+.card:hover {
+    /* margin-top: -10px; */
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 50%);
+}
+
+.card:hover > img {
+    transform: scale(.6);
+}
+
+.card img {
+    width: 100%;
+    height: 25vh;
+    overflow: hidden;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+.card-body a {
+    text-decoration: none;
+}
+
+.card-title {
+    color: #470D21;
+}
+
+.read-more a {
+    text-decoration: underline;
+    color: #9C0F48;
+}
+
+.read-more a:hover {
+    color: #bf1458;
+}
+
+.footer {
+    padding: 5% 5% 5%;
+    margin: 0;
+    max-width: unset;
+    /* background-color:rgb(30, 29, 29); */
+    text-align: center;
+    background-image: linear-gradient(rgba(7, 9, 14, .75), rgba(5, 7, 12, 0.75)), url(/assets/foodexample.webp);
+    color: white;
+}
+
+.footer h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #b21152;
+    font-weight: 950;
+}
+
+.footer .social svg {
+    width: 20%;
+    fill: white;
+    transition: 0.5s;
+}
+
+.footer .social svg:hover {
+    transform: scale(1.05);
+    fill: #bf1458;
+}
+
+.footer .row {
+    gap: 0;
+    padding: 0;
+}
+
+@media (max-width: 575px) {
+
+    .input {
+        padding: 3rem 0;
+    }
+
+    .back {
+        border: solid 1px #595959;
+        padding: 1rem;
+        width: 50%;
+        margin-left: 1rem;
+        border-radius: 4px;
+    }
+
+    .random-head {
+        text-align: center;
+        padding: 3rem 1rem 0;
+    }
+    
+    .random-head p {
+        line-height: 13px;
+    }
+    
+    .random-head p a {
+        color: #9C0F48;
+        text-decoration: none;
+    }
+
+    .container {
+        padding: 2.5rem 2rem 5.5rem 2rem;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .card {
+        width: 100%;
+        height: 48vh;
+    }
+
+    .card img {
+        height: 30vh;
+    }
+
+    .read-more a {
+        padding: 4% 25%;
+        border-radius: 4px;
+        background-color: #9C0F48;
+        color: white;
+        text-decoration: none;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+}
