@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackFavicons = require('webpack-favicons');
 
 module.exports = {
   // configuracion de entrada y salida del bundler
@@ -21,6 +22,15 @@ module.exports = {
       title: 'Steps',
       filename: 'steps.html',
       template: './src/steps.html'
+    }),
+    new WebpackFavicons({
+      src: 'assets/favicons/favicon.ico',
+      path: 'img',
+      background: '#000',
+      theme_color: '#000',
+      icons: {
+        favicons: true
+      }
     })
   ],
   // Estilos para la pagina
