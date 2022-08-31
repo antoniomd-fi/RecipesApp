@@ -6,7 +6,8 @@ module.exports = {
   // configuracion de entrada y salida del bundler
   entry: {
     index: './src/js/index.js',
-    steps: './src/js/steps.js'
+    steps: './src/js/steps.js',
+    autocomplete: './src/js/autocomplete.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

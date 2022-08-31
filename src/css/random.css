@@ -47,7 +47,7 @@
 }
 
 .card:hover > img {
-    transform: scale(.6);
+    transform: scale(.8);
 }
 
 .card img {
@@ -86,7 +86,7 @@
     max-width: unset;
     /* background-color:rgb(30, 29, 29); */
     text-align: center;
-    background-image: linear-gradient(rgba(7, 9, 14, .75), rgba(5, 7, 12, 0.75)), url(/assets/foodexample.webp);
+    background-image: linear-gradient(rgba(7, 9, 14, .75), rgba(5, 7, 12, 0.75))/*, url(/assets/foodexample.webp)*/;
     color: white;
 }
 

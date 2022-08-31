@@ -22,7 +22,7 @@
           <i class="bx bx-search"></i>
           <input type="text" placeholder="Search something delicious...">
         </div>
-        <button class="searh-button" data-toggle="modal" data-target="#browserModalCenter">Search</button>
+        <button class="search-button" data-toggle="modal" data-target="#browserModalCenter">Search</button>
       </div>
       <div class="banner-span">
         <span>Are you hungry? Try with a <a href="./random.html">random</a> recipe!</span>
@@ -36,18 +36,25 @@
       <h2 class="subtitle">The best recipe browser</h2>
     </div>
     <div class="banner-browser">
-      <div class="search-input">
-        <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search something delicious...">
-      </div>
-      <button class="searh-button" data-toggle="modal" data-target="#browserModalCenter">Search</button>
+      <form autocomplete="off" action="">
+        <div class="search-input">
+          <i class="bx bx-search"></i>
+          <div class="autocomplete">
+            <input id="input-box" class="input-box" placeholder="Search something delicious...">
+          </div>
+          </input type="text">
+        </div>
+      </form>
+      <button class="search-button" data-toggle="modal" data-target="#browserModalCenter">Search</button>
     </div>
+
     <div class="banner-span">
       <span>Are you hungry? Try with a <a href="./random.html">random</a> recipe!</span>
     </div>
   </main>
 
-  <div class="modal  fade" id="browserModalCenter" tabindex="-1" role="dialog" aria-labelledby="browserModalCenterTitle" aria-hidden="true">
+  <div class="modal  fade" id="browserModalCenter" tabindex="-1" role="dialog" aria-labelledby="browserModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -57,12 +64,13 @@
           </button>
         </div>
         <div class="modal-body">
-          <img id="modal-image"  alt="Croatian lamb peka image">
+          <img id="modal-image" alt="Croatian lamb peka image">
           <!-- <span>I want to see the complete recipe...</span> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary modal-continue-button">See steps</button>
+          <button onclick="window.location.href='steps.html'" type="button"
+            class="btn btn-primary modal-continue-button">See steps</button>
         </div>
       </div>
     </div>
@@ -140,16 +148,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-
   <script>
     const navbar = document.getElementById('navbar')
-
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY
       scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
     })
-
   </script>
+  <script src="./js/index.js"></script>
+  <script src="./js/autocomplete.js"></script>
 </body>
 
 </html>
