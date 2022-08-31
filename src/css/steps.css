@@ -33,7 +33,7 @@
     justify-content: flex-center;
     align-items: right;
     align-content: space-evenly;
-    height: 410px;
+    height: 350px;
 }
 
 .instructions{
@@ -53,6 +53,6 @@
     }
 
     .instructions{
-        margin-top: 250px;
+        margin-top: 150px;
     }
 }

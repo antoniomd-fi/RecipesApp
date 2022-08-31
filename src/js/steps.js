@@ -67,13 +67,16 @@ function showRecipe(recipe) {
     area.className = "text-recipe";
     area.textContent = recipe.strArea;
     strArea.appendChild(area);
-    let youtube = document.createElement("a");
-    youtube.href = recipe.strYoutube;
-    youtube.className = "text-recipe";
-    youtube.textContent = "Watch on YouTube";
-    strYoutube.appendChild(youtube);
+    if(recipe.strYoutube){
+        let youtube = document.createElement("a");
+        youtube.href = recipe.strYoutube;
+        youtube.target = "_blank";
+        youtube.className = "text-recipe";
+        youtube.textContent = "Watch on YouTube";
+        strYoutube.appendChild(youtube);
+    }
     let ingredients = document.createElement("ul");
-    ingredients.className = "flex-container text-right";
+    ingredients.className = "flex-container text-left";
     let arrayIngredients = [
         recipe.strIngredient1,
         recipe.strIngredient2,
