@@ -47,7 +47,7 @@ function findRecipe(id) {
     showRecipe(recipe);
 }
 
-function showRecipe(recipe) {
+function showRecipe() {
     const strMeal = document.getElementById("str-meal");
     const strMealThumb = document.getElementById("str-meal-thumb");
     const strArea = document.getElementById("str-area");
@@ -71,38 +71,17 @@ function showRecipe(recipe) {
         let youtube = document.createElement("a");
         youtube.href = recipe.strYoutube;
         youtube.target = "_blank";
-        youtube.className = "text-recipe";
+        youtube.className = "text-recipe a-youtube";
         youtube.textContent = "Watch on YouTube";
         strYoutube.appendChild(youtube);
     }
     let ingredients = document.createElement("ul");
     ingredients.className = "flex-container text-left";
-    let arrayIngredients = [
-        recipe.strIngredient1,
-        recipe.strIngredient2,
-        recipe.strIngredient3,
-        recipe.strIngredient4,
-        recipe.strIngredient5,
-        recipe.strIngredient6,
-        recipe.strIngredient7,
-        recipe.strIngredient8,
-        recipe.strIngredient9,
-        recipe.strIngredient10,
-        recipe.strIngredient11,
-        recipe.strIngredient12,
-        recipe.strIngredient13,
-        recipe.strIngredient14,
-        recipe.strIngredient15,
-        recipe.strIngredient16,
-        recipe.strIngredient17,
-        recipe.strIngredient18,
-        recipe.strIngredient19,
-        recipe.strIngredient20
-    ]
-    for (let i = 0; i < arrayIngredients.length; i++) {
-        if (arrayIngredients[i]) {
+    for (let i = 1; i <= 20; i++) {
+        console.log(recipe[`strIngredient${i}`]);
+        if (recipe[`strIngredient${i}`]) {
             let ingredient = document.createElement("li");
-            ingredient.textContent = arrayIngredients[i];
+            ingredient.textContent = recipe[`strIngredient${i}`] + ' - ' + recipe[`strMeasure${i}`];
             ingredients.appendChild(ingredient);
         }
     }

@@ -8,7 +8,6 @@
 }
 
 .section-instructions {
-    border-radius: .25rem;
     width: auto;
     height: auto;
 }
@@ -34,6 +33,14 @@
     align-items: right;
     align-content: space-evenly;
     height: 350px;
+}
+
+.a-youtube{
+    color: var(--color-wine-400);
+}
+
+.a-youtube:hover{
+    color: var(--color-wine-200);
 }
 
 .instructions{
