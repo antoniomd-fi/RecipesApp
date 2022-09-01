@@ -1,7 +1,49 @@
+
 // Number of results to show
 const NUMBER_OF_RESULTS = 9;
-let maxMeals; 
+let maxMeals;
 inicial(); // beggining of the page
+
+
+//const results = document.getElementById('results');
+const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
+const buttonRandom = document.getElementById('random');
+
+buttonRandom.addEventListener('click', function () {
+    results.textContent = ''
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const mealElement = document.createElement('div');
+            mealElement.className = 'card card-meal m-3';
+            mealElement.style.width = '26rem';
+            const linkImg = document.createElement('a');
+            linkImg.href = `steps.html?id=${data.meals[0].idMeal}`;
+            const img = document.createElement('img');
+            img.src = data.meals[0].strMealThumb;
+            img.alt = data.meals[0].strMeal;
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+            const h5 = document.createElement('h5');
+            h5.className = 'card-title';
+            h5.textContent = data.meals[0].strMeal;
+            const br = document.createElement('br');
+            const span = document.createElement('span');
+            span.className = 'read-more';
+            const a = document.createElement('a');
+            a.href = `steps.html?id=${data.meals[0].idMeal}`;
+            a.textContent = 'See the recipe';
+            mealElement.appendChild(linkImg);
+            linkImg.appendChild(img);
+            mealElement.appendChild(cardBody);
+            cardBody.appendChild(h5);
+            cardBody.appendChild(br);
+            cardBody.appendChild(span);
+            span.appendChild(a);
+            results.appendChild(mealElement);
+        })
+        .catch(error => console.log(error));
+});
 
 // call api and get results
 function inicial() {
