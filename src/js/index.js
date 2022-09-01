@@ -8,7 +8,7 @@ import chocolateGateau from '../assets/Chocolate-Gateau.jpg';
 import potatoGratinChicken from '../assets/potato-gratin-chicken.jpg';
 import chikenTeriyaki from '../assets/chicken-teriyaki.jpg';
 import modalExampleImage from '../assets/modal-example.jpg'
-
+import '../js/api'
 
 //IMAGENES PARA LA SECCIÓN DE POPULARES
 
@@ -27,6 +27,7 @@ img6.src = chocolateGateau;
 const modalExample = document.getElementById('modal-image')
 modalExample.src = modalExampleImage;
 
-
 const random1 = document.getElementById('img-random-1');
 random1.src = salmonTeriyaki;
+
+

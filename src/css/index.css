@@ -99,7 +99,7 @@ header{
     margin-left: 10px;
 }
 
-.search-input {
+.div-search-input {
     display: flex;
     width: 900px;
     height: 80px;
@@ -112,13 +112,13 @@ header{
     align-items: center;
 }
 
-.search-input i {
+.div-search-input i {
     font-size: 1.9rem;
     line-height: 16px;
     color: rgba(0, 0, 0, 0.25);
 }
 
-.search-input input {
+.div-search-input input {
     width: 800px;
     margin-left: 15px;
     border: #FFFFFF;
@@ -127,13 +127,13 @@ header{
     color: rgba(0, 0, 0, 0.25);
 }
 
-.search-input input::placeholder {
+.div-search-input input::placeholder {
     font-size: 1.9rem;
     line-height: 16px;
     color: rgba(0, 0, 0, 0.25);
 }
 
-.search-input input:focus {
+.div-search-input input:focus {
     outline: none;
 }
 
@@ -167,12 +167,12 @@ header{
         padding: 5px;
     }
     
-    .search-input {
+    .div-search-input {
         width: 800px;
     }
     
     
-    .search-input input {
+    .div-search-input input {
         width: auto;
         margin-left: 15px;
     }
@@ -187,20 +187,20 @@ header{
                 padding: 5px;
             }
             
-            .search-input {
+            .div-search-input {
                 width: auto;
             }
             
-            .search-input i {
+            .div-search-input i {
                 font-size: 1.5rem;
             }
             
-            .search-input input {
+            .div-search-input input {
                 width: auto;
                 margin-left: 15px;
             }
 
-            .search-input input::placeholder {
+            .div-search-input input::placeholder {
                 font-size: 1.5rem;
                
             }
@@ -221,21 +221,21 @@ header{
                 border-radius: 2px;
             }
             
-            .search-input {
+            .div-search-input {
                 width: 360px;
                 height: 60px;
             }
             
-            .search-input i {
+            .div-search-input i {
                 font-size: 1.3rem;
             }
             
-            .search-input input {
+            .div-search-input input {
                 height: 40px;
                 max-width: 250px;
             }
 
-            .search-input input::placeholder {
+            .div-search-input input::placeholder {
                 font-size: 1.1rem;
                
             }

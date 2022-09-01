@@ -1,11 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackFavicons = require('webpack-favicons');
 
 module.exports = {
   // configuracion de entrada y salida del bundler
   entry: {
     index: './src/js/index.js',
+    random: './src/js/random.js',
     steps: './src/js/steps.js'
   },
   output: {
@@ -23,15 +23,11 @@ module.exports = {
       filename: 'steps.html',
       template: './src/steps.html'
     }),
-    new WebpackFavicons({
-      src: 'assets/favicons/favicon.ico',
-      path: 'img',
-      background: '#000',
-      theme_color: '#000',
-      icons: {
-        favicons: true
-      }
-    })
+    new HtmlWebpackPlugin({
+      title: 'Random',
+      filename: 'random.html',
+      template: './src/random.html'
+    }),
   ],
   // Estilos para la pagina
   module: {

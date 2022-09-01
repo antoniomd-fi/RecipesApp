@@ -85,6 +85,15 @@ body {
     color: var(--color-wine-400);
 }
 
+.back {
+    margin-top: 3%;
+}
+
+.back a{
+    padding-left: 8%;
+    color: #595959;
+}
+
 /* Ignore the styles, used as an example */
 .box1 {
     background: var(--color-wine-800);

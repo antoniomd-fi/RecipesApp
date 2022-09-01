@@ -18,11 +18,11 @@
   <header id="navbar">
     <nav class="nav-bar">
       <div class="banner-browser">
-        <div class="search-input">
+        <div class="div-search-input">
           <i class="bx bx-search"></i>
-          <input type="text" placeholder="Search something delicious...">
+          <input id="search-input2" type="text" placeholder="Search something delicious...">
         </div>
-        <button class="searh-button" data-toggle="modal" data-target="#browserModalCenter">Search</button>
+        <button id="search-button2" class="searh-button" disabled="true">Search</button>
       </div>
       <div class="banner-span">
         <span>Are you hungry? Try with a <a href="./random.html">random</a> recipe!</span>
@@ -36,18 +36,20 @@
       <h2 class="subtitle">The best recipe browser</h2>
     </div>
     <div class="banner-browser">
-      <div class="search-input">
+      <div class="div-search-input">
         <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search something delicious...">
+        <input id="search-input" type="search" placeholder="Search something delicious...">
       </div>
-      <button class="searh-button" data-toggle="modal" data-target="#browserModalCenter">Search</button>
+      <button id="search-button" class="searh-button" disabled="true">Search</button>
+      <!-- <button class="searh-button" data-toggle="modal" data-target="#browserModalCenter">Search</button> -->
     </div>
     <div class="banner-span">
       <span>Are you hungry? Try with a <a href="./random.html">random</a> recipe!</span>
     </div>
   </main>
 
-  <div class="modal  fade" id="browserModalCenter" tabindex="-1" role="dialog" aria-labelledby="browserModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="browserModalCenter" tabindex="-1" role="dialog" aria-labelledby="browserModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -57,7 +59,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <img id="modal-image"  alt="Croatian lamb peka image">
+          <img id="modal-image" alt="Croatian lamb peka image">
           <!-- <span>I want to see the complete recipe...</span> -->
         </div>
         <div class="modal-footer">
@@ -129,7 +131,56 @@
   <footer>
     <p>All rights reserved ©</p>
   </footer>
-  <!-- Optional JavaScript -->
+
+
+  <script>
+    const navbar = document.getElementById('navbar')
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY
+      scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
+    })
+
+
+    //banner
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+
+    searchInput.addEventListener('keyup', function (e) {
+      if (searchInput.value.length > 0) {
+        searchButton.disabled = false;
+      } else {
+        searchButton.disabled = true;
+      }
+    });
+
+    searchButton.addEventListener('click', () => {
+      localStorage.setItem('search', searchInput.value);
+      searchInput.value = '';
+      window.location.href = "random.html";
+    });
+    //banner
+
+    //navbar
+    const searchInput2 = document.getElementById('search-input2');
+    const searchButton2 = document.getElementById('search-button2');
+
+    searchInput2.addEventListener('keyup', function (e) {
+      if (searchInput2.value.length > 0) {
+        searchButton2.disabled = false;
+      } else {
+        searchButton2.disabled = true;
+      }
+    });
+
+    searchButton2.addEventListener('click', () => {
+      localStorage.setItem('search', searchInput2.value);
+      searchInput2.value = '';
+      window.location.href = "random.html";
+    });
+//navbar
+  </script>
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -141,15 +192,6 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-  <script>
-    const navbar = document.getElementById('navbar')
-
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY
-      scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
-    })
-
-  </script>
 </body>
 
 </html>
