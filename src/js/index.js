@@ -9,10 +9,10 @@ import potatoGratinChicken from '../assets/potato-gratin-chicken.jpg';
 import chikenTeriyaki from '../assets/chicken-teriyaki.jpg';
 import modalExampleImage from '../assets/modal-example.jpg'
 import '../js/api'
+import './autocomplete'
 
 
-
-//IMAGENES PARA LA SECCIÓN DE POPULARES
+//Popular images
 
 const img1 = document.getElementById('img-popular-1');
 img1.src = salmonTeriyaki;
@@ -26,10 +26,10 @@ const img5 = document.getElementById('img-popular-5');
 img5.src = appleBlackberry;
 const img6 = document.getElementById('img-popular-6');
 img6.src = chocolateGateau;
-const modalExample = document.getElementById('modal-image')
+/*const modalExample = document.getElementById('modal-image')
 modalExample.src = modalExampleImage;
 
 const random1 = document.getElementById('img-random-1');
-random1.src = salmonTeriyaki;
+random1.src = salmonTeriyaki;*/
 
 

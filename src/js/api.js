@@ -10,9 +10,19 @@ inicial(); // beggining of the page
 //const results = document.getElementById('results');
 const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const buttonRandom = document.getElementById('random');
+const divLoader = document.getElementById('loader')
+
+function showLoader (){
+    divLoader.style.display = 'block'
+}
+
+function hideLoader(){
+    divLoader.style.display = 'none'
+}
 
 buttonRandom.addEventListener('click', function () {
     results.textContent = ''
+    showLoader()
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -43,6 +53,7 @@ buttonRandom.addEventListener('click', function () {
             cardBody.appendChild(span);
             span.appendChild(a);
             results.appendChild(mealElement);
+            hideLoader()
         })
         .catch(error => console.log(error));
 });
@@ -94,6 +105,7 @@ function searchMeals(search) {
                 console.log(meals)
                 // show meals in container
                 showMeals(meals);
+                hideLoader()
             })
     }
 }
@@ -107,6 +119,7 @@ function buildUrl(search) {
 // Method fetch to get data from api
 async function getMealsResults(url) {
     try {
+        showLoader()
         const response = await fetch(url);
         const data = await response.json();
         return data.meals;
