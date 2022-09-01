@@ -18,14 +18,15 @@
   <header id="navbar">
     <nav class="nav-bar">
       <div class="banner-browser">
-        <div class="search-input">
+        <div class="div-search-input">
           <i class="bx bx-search"></i>
-          <input type="text" placeholder="Search something delicious...">
+          <input id="search-input2" type="text" placeholder="Search something delicious...">
         </div>
-        <button class="search-button" >Search</button>
+        <button id="search-button2" class="searh-button" disabled="true">Search</button>
       </div>
       <div class="banner-span">
-        <span>Are you hungry? Try with a <a href="./random.html">random</a> recipe!</span>
+        <span>Are you hungry? Try with a <a class="button-random" data-toggle="modal"
+            data-target="#browserModalCenter">random</a> recipe!</span>
       </div>
     </nav>
   </header>
@@ -36,42 +37,23 @@
       <h2 class="subtitle">The best recipe browser</h2>
     </div>
     <div class="banner-browser">
-      <form autocomplete="off" action="">
-        <div class="search-input">
-          <i class="bx bx-search"></i>
-          <div class="autocomplete">
-            <input id="input-box" class="input-box" placeholder="Search something delicious...">
-          </div>
-          </input type="text">
-        </div>
-      </form>
-      <button class="search-button" >Search</button>
+      <div class="div-search-input">
+        <i class="bx bx-search"></i>
+        <input id="search-input" type="search" placeholder="Search something delicious...">
+      </div>
+      <button id="search-button" class="searh-button" disabled="true">Search</button>
+      <!-- <button class="searh-button" data-toggle="modal" data-target="#browserModalCenter">Search</button> -->
     </div>
-
     <div class="banner-span">
-      <span>Are you hungry? Try with a <a href="./random.html">random</a> recipe!</span>
+      <span>Are you hungry? Try with a <a class="button-random" data-toggle="modal"
+          data-target="#browserModalCenter">random</a> recipe!</span>
     </div>
   </main>
 
-  <div class="modal  fade" id="browserModalCenter" tabindex="-1" role="dialog" aria-labelledby="browserModalCenterTitle"
+  <div class="modal fade" id="browserModalCenter" tabindex="-1" role="dialog" aria-labelledby="browserModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="browserModalLongTitle">Croatian lamb peka</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <img id="modal-image" alt="Croatian lamb peka image">
-          <!-- <span>I want to see the complete recipe...</span> -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button onclick="window.location.href='steps.html'" type="button"
-            class="btn btn-primary modal-continue-button">See steps</button>
-        </div>
+      <div id="recipe-content" class="modal-content">
       </div>
     </div>
   </div>
@@ -134,10 +116,113 @@
   </section>
 
 
-  <footer>
-    <p>All rights reserved ©</p>
+  <footer class=" footer flex-shrink-0 py-4 text-white-50">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Recipes app</h2>
+        <p>Check the project's repository</p>
+        © 2022 Copyright:
+      </div>
+    </div>
+    <div class="row flex-column align-items-center">
+      <div class="col-4 align-items-center media">
+        <div class="social">
+          <a href="https://github.com/antoniomd-fi/RecipesApp" target="_blank" id="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 30 30">
+              <path
+                d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z">
+              </path>
+            </svg> </a>
+        </div>
+      </div>
+      <br>
+      <div class="text-rigt">
+        <p>
+          Ciudad de México, 2022</p>
+      </div>
+    </div>
   </footer>
-  <!-- Optional JavaScript -->
+
+  <script>
+    const navbar = document.getElementById('navbar')
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY
+      scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
+    })
+
+    //banner
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+
+    searchInput.addEventListener('keyup', function (e) {
+      if (searchInput.value.length > 0) {
+        searchButton.disabled = false;
+      } else {
+        searchButton.disabled = true;
+      }
+    });
+
+    searchButton.addEventListener('click', () => {
+      localStorage.setItem('search', searchInput.value);
+      searchInput.value = '';
+      window.location.href = "random.html";
+    });
+    //banner
+
+    //navbar
+    const searchInput2 = document.getElementById('search-input2');
+    const searchButton2 = document.getElementById('search-button2');
+
+    searchInput2.addEventListener('keyup', function (e) {
+      if (searchInput2.value.length > 0) {
+        searchButton2.disabled = false;
+      } else {
+        searchButton2.disabled = true;
+      }
+    });
+
+    searchButton2.addEventListener('click', () => {
+      localStorage.setItem('search', searchInput2.value);
+      searchInput2.value = '';
+      window.location.href = "random.html";
+    });
+
+
+    //consumir api y mostrar modal con la receta
+    const urlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php'
+
+    const buttonRandom = document.querySelector('.button-random');
+    buttonRandom.addEventListener('click', () => {
+      fetch(urlRandom)
+        .then(response => response.json())
+        .then(data => {
+          const recipe = data.meals[0];
+          console.log(recipe + 'hola');
+          const recipeContent = document.getElementById('recipe-content');
+          let html = `
+      <div class="modal-header">
+      <h5 class="modal-title" id="browserModalLongTitle">${recipe.strMeal}</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+      <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" width="50%">
+      <p>${recipe.strInstructions}</p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <a href="${recipe.strYoutube}" target = "_blank" class="btn btn-primary modal-continue-button">See steps</a>
+      </div>
+      `;
+          recipeContent.innerHTML = html;
+        })
+        .catch(error => console.log(error));
+    });
+
+  </script>
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -148,15 +233,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script>
-    const navbar = document.getElementById('navbar')
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY
-      scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
-    })
-  </script>
-  <script src="./js/index.js"></script>
-  <script src="./js/autocomplete.js"></script>
+
 </body>
 
 </html>

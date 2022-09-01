@@ -1,16 +1,6 @@
 @import "styles.css";
 
-
 /* Random Page */
-
-.back {
-    margin-top: 3%;
-}
-
-.back a{
-    padding-left: 8%;
-    color: #595959;
-}
 
 .random-head {
     text-align: center;
@@ -27,12 +17,14 @@
     text-decoration: none;
 }
 
+/*
 .row {
     padding: 0 0 4rem 0;
     gap: 3rem;
 }
+*/
 
-.card {
+.card-meal {
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -40,17 +32,17 @@
     transition: 0.55s;
 }
 
-.card:hover {
+.card-meal:hover {
     /* margin-top: -10px; */
     transform: scale(1.05);
     box-shadow: 0 8px 24px rgb(0 0 0 / 50%);
 }
 
-.card:hover > img {
-    transform: scale(.8);
+.card-meal:hover>img {
+    transform: scale(.6);
 }
 
-.card img {
+.card-meal img {
     width: 100%;
     height: 25vh;
     overflow: hidden;
@@ -59,16 +51,30 @@
     border-top-right-radius: 10px;
 }
 
-.card-body {
+.card-body-meal {
     padding: 1rem 1rem 2rem 1rem;
 }
 
-.card-body a {
+.card-body-meal a {
     text-decoration: none;
 }
 
 .card-title {
     color: #470D21;
+}
+
+.container-meal {
+    height: 400px;
+}
+
+.flex-container-meals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    overflow: auto;
+    flex-direction: row;
 }
 
 .read-more a {
@@ -84,9 +90,9 @@
     padding: 5% 5% 5%;
     margin: 0;
     max-width: unset;
-    /* background-color:rgb(30, 29, 29); */
+    background-color: rgb(30, 29, 29);
     text-align: center;
-    background-image: linear-gradient(rgba(7, 9, 14, .75), rgba(5, 7, 12, 0.75))/*, url(/assets/foodexample.webp)*/;
+    /*background-image: linear-gradient(rgba(7, 9, 14, .75), rgba(5, 7, 12, 0.75)), url(/assets/foodexample.webp);*/
     color: white;
 }
 
@@ -97,7 +103,7 @@
 }
 
 .footer .social svg {
-    width: 20%;
+    width: 60%;
     fill: white;
     transition: 0.5s;
 }
@@ -130,11 +136,11 @@
         text-align: center;
         padding: 3rem 1rem 0;
     }
-    
+
     .random-head p {
         line-height: 13px;
     }
-    
+
     .random-head p a {
         color: #9C0F48;
         text-decoration: none;
@@ -150,12 +156,12 @@
         gap: 2.5rem;
     }
 
-    .card {
+    .card-meal {
         width: 100%;
         height: 48vh;
     }
 
-    .card img {
+    .card-meal img {
         height: 30vh;
     }
 
