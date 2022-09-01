@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     index: './src/js/index.js',
     random: './src/js/random.js',
-    steps: './src/js/steps.js'
+    steps: './src/js/steps.js',
+    autocomplete: './src/js/autocomplete.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

@@ -1,6 +1,6 @@
-const input_box = document.getElementById("input-box")
+const input_box = document.getElementById("search-input")
 const suggestion_boc = document.querySelector(".autocomplete-box")
-const search_wrapper = document.querySelector(".search-input")
+const search_wrapper = document.querySelector(".div-search-input")
 let suggestion_words = []
 
 const fetchRecipe = (letters) => {
