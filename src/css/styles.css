@@ -85,6 +85,10 @@ body {
     color: var(--color-wine-400);
 }
 
+.button-random{
+    cursor: pointer;
+}
+
 .back {
     margin-top: 3%;
 }
