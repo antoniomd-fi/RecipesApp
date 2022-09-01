@@ -10,6 +10,8 @@ import chikenTeriyaki from '../assets/chicken-teriyaki.jpg';
 import modalExampleImage from '../assets/modal-example.jpg'
 import '../js/api'
 
+
+
 //IMAGENES PARA LA SECCIÓN DE POPULARES
 
 const img1 = document.getElementById('img-popular-1');
