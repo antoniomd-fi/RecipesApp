@@ -24,50 +24,62 @@ function hideLoader() {
 buttonRandom.addEventListener('click', async function () {
     results.textContent = ''
     showLoader()
-    await createRandomArray()
+    randomObjects = await createRandomArray()
+    createRandomCards(randomObjects)
     hideLoader();
 });
 
 async function createRandomArray() {
+    let arrayRamdom = []
     for (let i = 0; i < 9; i++) {
-        fetch(url)
+       await fetch(url)
             .then(response => response.json())
             .then(data => {
-                console.log("iteracion", data.meals[0])
-                const mealElement = document.createElement('div');
-                mealElement.className = 'card card-meal m-3';
-                mealElement.style.width = '20rem';
-                const linkImg = document.createElement('a');
-                linkImg.href = `steps.html?id=${data.meals[0].idMeal}`;
-                const img = document.createElement('img');
-                img.src = data.meals[0].strMealThumb;
-                img.alt = data.meals[0].strMeal;
-                const cardBody = document.createElement('div');
-                cardBody.className = 'card-body';
-                const h5 = document.createElement('h5');
-                h5.className = 'card-title';
-                h5.textContent = data.meals[0].strMeal;
-                const br = document.createElement('br');
-                const span = document.createElement('span');
-                span.className = 'read-more';
-                const a = document.createElement('a');
-                a.href = `steps.html?id=${data.meals[0].idMeal}`;
-                a.textContent = 'See the recipe';
-                mealElement.appendChild(linkImg);
-                linkImg.appendChild(img);
-                mealElement.appendChild(cardBody);
-                cardBody.appendChild(h5);
-                cardBody.appendChild(br);
-                cardBody.appendChild(span);
-                span.appendChild(a);
-                results.appendChild(mealElement);
+                arrayRamdom[i]= data.meals[0]
             })
             .catch(error => console.log(error))
     }
+    return arrayRamdom
 }
 
 
-
+function createRandomCards(meals){
+    console.log("meals",meals)
+    results.textContent = '';
+    localStorage.setItem('meals', '');
+        maxMeals = meals.slice(0, NUMBER_OF_RESULTS);
+        localStorage.setItem('meals', JSON.stringify(maxMeals));
+        maxMeals.forEach(function (meal) {
+            const mealElement = document.createElement('div');
+            mealElement.className = 'card card-meal m-3';
+            mealElement.style.width = '20rem';
+            const linkImg = document.createElement('a');
+            linkImg.href = `steps.html?id=${meal.idMeal}`;
+            const img = document.createElement('img');
+            img.src = meal.strMealThumb;
+            img.alt = meal.strMeal;
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+            const h5 = document.createElement('h5');
+            h5.className = 'card-title';
+            h5.textContent = meal.strMeal;
+            const br = document.createElement('br');
+            const span = document.createElement('span');
+            span.className = 'read-more';
+            const a = document.createElement('a');
+            a.href = `steps.html?id=${meal.idMeal}`;
+            a.textContent = 'See the recipe';
+            mealElement.appendChild(linkImg);
+            linkImg.appendChild(img);
+            mealElement.appendChild(cardBody);
+            cardBody.appendChild(h5);
+            cardBody.appendChild(br);
+            cardBody.appendChild(span);
+            span.appendChild(a);
+            results.appendChild(mealElement);
+        }
+        );
+}
 
 // call api and get results
 function inicial() {
@@ -141,6 +153,7 @@ async function getMealsResults(url) {
 
 // function to show meals in container
 function showMeals(meals) {
+    console.log("goodmeals", meals)
     results.textContent = '';
     localStorage.setItem('meals', '');
     if (meals === null) {
@@ -186,6 +199,7 @@ function showMeals(meals) {
         );
     }
 }
+
 
 // function to show meals in container
 function random() {
