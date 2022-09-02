@@ -76,26 +76,22 @@ body {
     border: 1px solid var(--color-wine-400);
 }*/
 
-.link-back{
-    color: var(--color-wine-400);
-    font-size: 1.2rem;
-}
-
-.link-back:hover{
-    color: var(--color-wine-400);
-}
-
-.button-random{
-    cursor: pointer;
+#random{
+    cursor: pointer; 
 }
 
 .back {
     margin-top: 3%;
+    font-size: 1.5rem;
 }
 
 .back a{
     padding-left: 8%;
-    color: #595959;
+    color: var(--color-wine-400);
+}
+
+.back a:hover{
+    color: var(--color-wine-800);
 }
 
 /* Ignore the styles, used as an example */
