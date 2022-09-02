@@ -44,7 +44,6 @@ async function createRandomArray() {
 
 
 function createRandomCards(meals){
-    console.log("meals",meals)
     results.textContent = '';
     localStorage.setItem('meals', '');
         maxMeals = meals.slice(0, NUMBER_OF_RESULTS);
