@@ -11,52 +11,63 @@ inicial(); // beggining of the page
 const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const buttonRandom = document.getElementById('random');
 const divLoader = document.getElementById('loader')
+var randomObjects = []
 
-function showLoader (){
+function showLoader() {
     divLoader.style.display = 'block'
 }
 
-function hideLoader(){
+function hideLoader() {
     divLoader.style.display = 'none'
 }
 
-buttonRandom.addEventListener('click', function () {
+buttonRandom.addEventListener('click', async function () {
     results.textContent = ''
     showLoader()
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const mealElement = document.createElement('div');
-            mealElement.className = 'card card-meal m-3';
-            mealElement.style.width = '28rem';
-            const linkImg = document.createElement('a');
-            linkImg.href = `steps.html?id=${data.meals[0].idMeal}`;
-            const img = document.createElement('img');
-            img.src = data.meals[0].strMealThumb;
-            img.alt = data.meals[0].strMeal;
-            const cardBody = document.createElement('div');
-            cardBody.className = 'card-body';
-            const h5 = document.createElement('h5');
-            h5.className = 'card-title';
-            h5.textContent = data.meals[0].strMeal;
-            const br = document.createElement('br');
-            const span = document.createElement('span');
-            span.className = 'read-more';
-            const a = document.createElement('a');
-            a.href = `steps.html?id=${data.meals[0].idMeal}`;
-            a.textContent = 'See the recipe';
-            mealElement.appendChild(linkImg);
-            linkImg.appendChild(img);
-            mealElement.appendChild(cardBody);
-            cardBody.appendChild(h5);
-            cardBody.appendChild(br);
-            cardBody.appendChild(span);
-            span.appendChild(a);
-            results.appendChild(mealElement);
-            hideLoader()
-        })
-        .catch(error => console.log(error));
+    await createRandomArray()
+    hideLoader();
 });
+
+async function createRandomArray() {
+    for (let i = 0; i < 9; i++) {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log("iteracion", data.meals[0])
+                const mealElement = document.createElement('div');
+                mealElement.className = 'card card-meal m-3';
+                mealElement.style.width = '20rem';
+                const linkImg = document.createElement('a');
+                linkImg.href = `steps.html?id=${data.meals[0].idMeal}`;
+                const img = document.createElement('img');
+                img.src = data.meals[0].strMealThumb;
+                img.alt = data.meals[0].strMeal;
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+                const h5 = document.createElement('h5');
+                h5.className = 'card-title';
+                h5.textContent = data.meals[0].strMeal;
+                const br = document.createElement('br');
+                const span = document.createElement('span');
+                span.className = 'read-more';
+                const a = document.createElement('a');
+                a.href = `steps.html?id=${data.meals[0].idMeal}`;
+                a.textContent = 'See the recipe';
+                mealElement.appendChild(linkImg);
+                linkImg.appendChild(img);
+                mealElement.appendChild(cardBody);
+                cardBody.appendChild(h5);
+                cardBody.appendChild(br);
+                cardBody.appendChild(span);
+                span.appendChild(a);
+                results.appendChild(mealElement);
+            })
+            .catch(error => console.log(error))
+    }
+}
+
+
+
 
 // call api and get results
 function inicial() {
@@ -218,13 +229,13 @@ const urlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
 const buttonRandom2 = document.querySelector('.button-random');
 buttonRandom2.addEventListener('click', () => {
-  fetch(urlRandom)
-    .then(response => response.json())
-    .then(data => {
-      const recipe = data.meals[0];
-      console.log(recipe+'hola');
-      const recipeContent = document.getElementById('recipe-content');
-      let html = `
+    fetch(urlRandom)
+        .then(response => response.json())
+        .then(data => {
+            const recipe = data.meals[0];
+            console.log(recipe + 'hola');
+            const recipeContent = document.getElementById('recipe-content');
+            let html = `
       <div class="modal-header">
       <h5 class="modal-title" id="browserModalLongTitle">${recipe.strMeal}</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -240,9 +251,9 @@ buttonRandom2.addEventListener('click', () => {
       <a href="${recipe.strYoutube}" target = "_blank" class="btn btn-primary modal-continue-button">See steps</a>
       </div>
       `;
-    recipeContent.innerHTML = html;
-    })
-    .catch(error => console.log(error));
+            recipeContent.innerHTML = html;
+        })
+        .catch(error => console.log(error));
 });
 
 
