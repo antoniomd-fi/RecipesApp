@@ -162,7 +162,7 @@ function showMeals(meals) {
         localStorage.setItem('meals', JSON.stringify(maxMeals));
         maxMeals.forEach(function (meal) {
             const mealElement = document.createElement('div');
-            mealElement.className = 'card card-meal m-3';
+            mealElement.className = 'card card-meal m-4';
             mealElement.style.width = '20rem';
             const linkImg = document.createElement('a');
             linkImg.href = `steps.html?id=${meal.idMeal}`;
