@@ -1,13 +1,29 @@
-window.addEventListener('load', () => {inicial()}) // beggining of the page}));
+window.addEventListener('load', () => {
+    localStorage.setItem('meals', '');
+    random();
+});
 // Number of results to show
 const NUMBER_OF_RESULTS = 9;
 let maxMeals;
+inicial() // beggining of the page
+
 
 //const results = document.getElementById('results');
 const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const buttonRandom = document.getElementById('random');
 const divLoader = document.getElementById('loader')
+const indexButtonRandom = document.getElementById('randomA')
 var randomObjects = []
+
+
+window.onload= function() {
+    const randomIsClicked = localStorage.getItem('randomA')
+    if(randomIsClicked){
+        setRandomButton()
+    }
+    localStorage.setItem('randomA', false)
+}
+
 
 function showLoader() {
     divLoader.style.display = 'block'
@@ -25,6 +41,14 @@ buttonRandom.addEventListener('click', async function () {
     hideLoader();
 });
 
+
+async function setRandomButton(){
+    showLoader()
+    randomObjects = await createRandomArray()
+    createRandomCards(randomObjects)
+    hideLoader();
+}
+
 async function createRandomArray() {
     let arrayRamdom = []
     for (let i = 0; i < 9; i++) {
@@ -37,6 +61,7 @@ async function createRandomArray() {
     }
     return arrayRamdom
 }
+
 
 
 function createRandomCards(meals){
@@ -120,10 +145,10 @@ function searchMeals(search) {
         // get data from api
         return getMealsResults(url)
             .then(function (meals) {
-                //console.log(meals)
+                console.log(meals)
                 // show meals in container
                 showMeals(meals);
-                hideLoader();
+                hideLoader()
             })
     }
 }
@@ -148,8 +173,10 @@ async function getMealsResults(url) {
 
 // function to show meals in container
 function showMeals(meals) {
+    console.log("goodmeals", meals)
     results.textContent = '';
-    if (meals === null && meals === '') {
+    localStorage.setItem('meals', '');
+    if (meals === null) {
         const noResults = document.createElement('div');
         noResults.innerHTML = `
                     <div class="alert alert-danger">
@@ -240,6 +267,7 @@ buttonRandom2.addEventListener('click', () => {
         .then(response => response.json())
         .then(data => {
             const recipe = data.meals[0];
+            console.log(recipe + 'hola');
             const recipeContent = document.getElementById('recipe-content');
             let html = `
       <div class="modal-header">
@@ -264,3 +292,4 @@ buttonRandom2.addEventListener('click', () => {
 
 
 export { inicial }; // beggining of the page
+
