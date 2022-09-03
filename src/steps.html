@@ -17,12 +17,18 @@
     <header id="navbar">
         <nav class="nav-bar">
             <div class="banner-browser">
-                <div class="div-search-input">
+                <form autocomplete="off" action="">
+                  <div class="div-search-input">
                     <i class="bx bx-search"></i>
-                    <input id="search-input" type="text" placeholder="Search something delicious...">
-                </div>
-                <button id="search-button" class="search-button">Search</button>
-            </div>
+                    <div class="autocomplete">
+                      <input id="search-input" class="input-box" placeholder="Search something delicious...">
+                    </div>
+                    </input type="text">
+                  </div>
+                </form>
+                <button id="search-button" class="search-button" disabled="true">Search</button>
+                <!-- <button class="search-button" data-toggle="modal" data-target="#browserModalCenter">Search</button> -->
+              </div>
             <div class="banner-span">
                 <span>Are you hungry? Try with a <a class="button-random" data-toggle="modal"
                     data-target="#browserModalCenter">random</a> recipe!</span>
