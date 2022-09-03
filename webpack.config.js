@@ -8,6 +8,7 @@ module.exports = {
     random: './src/js/random.js',
     steps: './src/js/steps.js',
     autocomplete: './src/js/autocomplete.js'
+    api: './src/js/api.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

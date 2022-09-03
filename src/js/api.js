@@ -1,11 +1,7 @@
-window.addEventListener('load', () => {
-    localStorage.setItem('meals', '');
-    random();
-});
+window.addEventListener('load', () => {inicial()}) // beggining of the page}));
 // Number of results to show
 const NUMBER_OF_RESULTS = 9;
 let maxMeals;
-inicial(); // beggining of the page
 
 //const results = document.getElementById('results');
 const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
@@ -124,10 +120,10 @@ function searchMeals(search) {
         // get data from api
         return getMealsResults(url)
             .then(function (meals) {
-                console.log(meals)
+                //console.log(meals)
                 // show meals in container
                 showMeals(meals);
-                hideLoader()
+                hideLoader();
             })
     }
 }
@@ -152,10 +148,8 @@ async function getMealsResults(url) {
 
 // function to show meals in container
 function showMeals(meals) {
-    console.log("goodmeals", meals)
     results.textContent = '';
-    localStorage.setItem('meals', '');
-    if (meals === null) {
+    if (meals === null && meals === '') {
         const noResults = document.createElement('div');
         noResults.innerHTML = `
                     <div class="alert alert-danger">
@@ -246,7 +240,6 @@ buttonRandom2.addEventListener('click', () => {
         .then(response => response.json())
         .then(data => {
             const recipe = data.meals[0];
-            console.log(recipe + 'hola');
             const recipeContent = document.getElementById('recipe-content');
             let html = `
       <div class="modal-header">

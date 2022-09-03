@@ -8,7 +8,7 @@ import chocolateGateau from '../assets/Chocolate-Gateau.jpg';
 import potatoGratinChicken from '../assets/potato-gratin-chicken.jpg';
 import chikenTeriyaki from '../assets/chicken-teriyaki.jpg';
 import modalExampleImage from '../assets/modal-example.jpg'
-import '../js/api'
+import './api'
 import './autocomplete'
 
 
