@@ -18,19 +18,20 @@
         <nav class="nav-bar">
             <div class="banner-browser">
                 <form autocomplete="off" action="">
-                    <div class="div-search-input">
-                        <i class="bx bx-search"></i>
-                        <div class="autocomplete">
-                            <input id="search-input" class="input-box" placeholder="Search something delicious...">
-                        </div>
-                        </input type="text">
+                  <div class="div-search-input">
+                    <i class="bx bx-search"></i>
+                    <div class="autocomplete">
+                      <input id="search-input" class="input-box" placeholder="Search something delicious...">
                     </div>
+                    </input type="text">
+                  </div>
                 </form>
                 <button id="search-button" class="search-button" disabled="true">Search</button>
                 <!-- <button class="search-button" data-toggle="modal" data-target="#browserModalCenter">Search</button> -->
-            </div>
+              </div>
             <div class="banner-span">
-                <span>Are you hungry? Try with a <a class="button-random" id="ramdomAnchor">random</a> recipe!</span>
+                <span>Are you hungry? Try with a <a class="button-random" data-toggle="modal"
+                    data-target="#browserModalCenter">random</a> recipe!</span>
             </div>
         </nav>
     </header>
@@ -102,14 +103,6 @@
         </div>
     </footer>
 
-    <script>
-        const randomAnchor = document.getElementById('ramdomAnchor')
-        randomAnchor.addEventListener('click', () => {
-            localStorage.setItem('ramdomA', true);
-            window.location.href = "random.html";
-        })
-
-    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

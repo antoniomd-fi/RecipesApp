@@ -26,7 +26,8 @@
         <button id="search-button2" class="search-button" disabled="true">Search</button>
       </div>
       <div class="banner-span">
-        <span>Are you hungry? Try with a <a class="button-random ramdomAnchor">random</a> recipe!</span>
+        <span>Are you hungry? Try with a <a class="button-random" data-toggle="modal"
+            data-target="#browserModalCenter">random</a> recipe!</span>
       </div>
     </nav>
   </header>
@@ -50,7 +51,8 @@
       <!-- <button class="search-button" data-toggle="modal" data-target="#browserModalCenter">Search</button> -->
     </div>
     <div class="banner-span">
-      <span>Are you hungry? Try with a <a class="button-random ramdomAnchor">random</a> recipe!</span>
+      <span>Are you hungry? Try with a <a class="button-random" data-toggle="modal"
+          data-target="#browserModalCenter">random</a> recipe!</span>
     </div>
   </main>
 
@@ -156,16 +158,6 @@
     scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
   })
 
-  const randomAnchor = document.querySelectorAll('.ramdomAnchor')
-
-  
-  randomAnchor.forEach(element => {
-    element.addEventListener('click',()=>{
-    localStorage.setItem('ramdomA', true);
-    window.location.href = "random.html";
-  })
-  });
-  
         //banner
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
