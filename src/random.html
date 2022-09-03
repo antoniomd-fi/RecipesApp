@@ -15,11 +15,17 @@
   <header id="navbar">
     <nav class="nav-bar">
       <div class="banner-browser">
-        <div class="div-search-input">
-          <i class="bx bx-search"></i>
-          <input id="input" type="text" placeholder="Search something delicious...">
-        </div>
-        <button id="button" class="search-button">Search</button>
+        <form autocomplete="off" action="">
+          <div class="div-search-input">
+            <i class="bx bx-search"></i>
+            <div class="autocomplete">
+              <input id="search-input" class="input-box" placeholder="Search something delicious...">
+            </div>
+            </input type="text">
+          </div>
+        </form>
+        <button id="search-button" class="search-button" disabled="true">Search</button>
+        <!-- <button class="search-button" data-toggle="modal" data-target="#browserModalCenter">Search</button> -->
       </div>
       <div class="banner-span">
         <span>Are you hungry? Try with a <a id="random">random</a> recipe!</span>
@@ -40,8 +46,8 @@
     </div>
   </section>
   <section class="d-flex" style="height: 150vh;">
-    <div class="container container-meal">
-      <div id="results" class="flex-container-meals"></div>
+    <div class="container-fluid container-meal">
+      <div id="results" class="grid"></div>
     </div>
   </section>
   

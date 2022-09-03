@@ -23,6 +23,34 @@
     gap: 3rem;
 }
 */
+/*GRID*/
+
+.grid{
+  display: grid;
+  column-gap: 7rem;
+  row-gap: 5rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: 22rem;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+}
+
+@media (max-width:1300px){ 
+  .grid{
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 9rem;
+  }
+}
+
+@media (max-width: 768px){ 
+  .grid{
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 15rem;
+  }
+}
+
 
 .card-meal {
     width: 100%;
@@ -64,7 +92,9 @@
 }
 
 .container-meal {
+  display: flex;
     height: 400px;
+   justify-content: center;
 }
 
 .flex-container-meals {
