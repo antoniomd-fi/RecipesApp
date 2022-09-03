@@ -38,7 +38,6 @@ async function createRandomArray() {
     return arrayRamdom
 }
 
-
 function createRandomCards(meals){
     results.textContent = '';
     localStorage.setItem('meals', '');
@@ -90,8 +89,8 @@ function getMeal() {
 }
 
 // get input and button
-const input = document.getElementById('input');
-const button = document.getElementById('button');
+const input = document.getElementById('search-input');
+const button = document.getElementById('search-button');
 
 // get container for results
 const results = document.getElementById('results');
@@ -100,8 +99,11 @@ const results = document.getElementById('results');
 input.addEventListener('keyup', function () {
     if (input.value.length > 0) {
         button.disabled = false;
+        button.style.pointerEvents = 'auto';
     } else {
         button.disabled = true;
+        button.style.pointerEvents = 'none';
+
     }
 });
 // add event listener to button
@@ -261,6 +263,14 @@ buttonRandom2.addEventListener('click', () => {
         })
         .catch(error => console.log(error));
 });
+
+async function createCards () {
+    results.textContent = ''
+    showLoader()
+    randomObjects = await createRandomArray()
+    createRandomCards(randomObjects)
+    hideLoader();
+}
 
 
 export { inicial }; // beggining of the page

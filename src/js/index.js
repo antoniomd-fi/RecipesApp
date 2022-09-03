@@ -11,6 +11,7 @@ import modalExampleImage from '../assets/modal-example.jpg'
 import './api'
 import './autocomplete'
 
+console.log("hola mi amor");
 
 //Popular images
 
@@ -26,6 +27,8 @@ const img5 = document.getElementById('img-popular-5');
 img5.src = appleBlackberry;
 const img6 = document.getElementById('img-popular-6');
 img6.src = chocolateGateau;
+
+
 /*const modalExample = document.getElementById('modal-image')
 modalExample.src = modalExampleImage;
 

@@ -15,8 +15,11 @@ const searchButton = document.getElementById('search-button');
 searchInput.addEventListener('keyup', function (e) {
     if (searchInput.value.length > 0) {
         searchButton.disabled = false;
+        searchButton.style.pointerEvents = 'auto';
     } else {
         searchButton.disabled = true;
+        searchButton.style.pointerEvents = 'none';
+
     }
 });
 
