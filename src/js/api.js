@@ -3,11 +3,22 @@ window.addEventListener('load', () => {inicial()}) // beggining of the page}));
 const NUMBER_OF_RESULTS = 9;
 let maxMeals;
 
+
 //const results = document.getElementById('results');
 const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const buttonRandom = document.getElementById('random');
 const divLoader = document.getElementById('loader')
 var randomObjects = []
+
+
+window.onload= function() {
+    
+    const randomIsClicked = localStorage.getItem("randomA")
+    if(randomIsClicked == 1){
+        setRandomButton()
+    }
+
+}
 
 function showLoader() {
     divLoader.style.display = 'block'
@@ -17,11 +28,24 @@ function hideLoader() {
     divLoader.style.display = 'none'
 }
 
-buttonRandom.addEventListener('click', async function () {
-    results.textContent = ''
+async function setRandomButton(){
+    results.textContent = '';
     showLoader()
+    results.textContent = '';
     randomObjects = await createRandomArray()
     createRandomCards(randomObjects)
+    hideLoader();
+}
+
+
+buttonRandom.addEventListener('click', async function () {
+    results.textContent = '';
+    showLoader()
+    
+    randomObjects = await createRandomArray()
+    
+    createRandomCards(randomObjects)
+    
     hideLoader();
 });
 
@@ -42,38 +66,39 @@ async function createRandomArray() {
 function createRandomCards(meals){
     results.textContent = '';
     localStorage.setItem('meals', '');
-        maxMeals = meals.slice(0, NUMBER_OF_RESULTS);
-        localStorage.setItem('meals', JSON.stringify(maxMeals));
-        maxMeals.forEach(function (meal) {
-            const mealElement = document.createElement('div');
-            mealElement.className = 'card card-meal m-3';
-            mealElement.style.width = '20rem';
-            const linkImg = document.createElement('a');
-            linkImg.href = `steps.html?id=${meal.idMeal}`;
-            const img = document.createElement('img');
-            img.src = meal.strMealThumb;
-            img.alt = meal.strMeal;
-            const cardBody = document.createElement('div');
-            cardBody.className = 'card-body';
-            const h5 = document.createElement('h5');
-            h5.className = 'card-title';
-            h5.textContent = meal.strMeal;
-            const br = document.createElement('br');
-            const span = document.createElement('span');
-            span.className = 'read-more';
-            const a = document.createElement('a');
-            a.href = `steps.html?id=${meal.idMeal}`;
-            a.textContent = 'See the recipe';
-            mealElement.appendChild(linkImg);
-            linkImg.appendChild(img);
-            mealElement.appendChild(cardBody);
-            cardBody.appendChild(h5);
-            cardBody.appendChild(br);
-            cardBody.appendChild(span);
-            span.appendChild(a);
-            results.appendChild(mealElement);
+    maxMeals = meals.slice(0, NUMBER_OF_RESULTS);
+    localStorage.setItem('meals', JSON.stringify(maxMeals));
+    maxMeals.forEach(function (meal) {
+        const mealElement = document.createElement('div');
+        mealElement.className = 'card card-meal m-4';
+        mealElement.style.width = '20rem';
+        const linkImg = document.createElement('a');
+        linkImg.href = `steps.html?id=${meal.idMeal}`;
+        const img = document.createElement('img');
+        img.src = meal.strMealThumb;
+        img.alt = meal.strMeal;
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+        const h5 = document.createElement('h5');
+        h5.className = 'card-title';
+        h5.textContent = meal.strMeal;
+        const br = document.createElement('br');
+        const span = document.createElement('span');
+        span.className = 'read-more';
+        const a = document.createElement('a');
+        a.href = `steps.html?id=${meal.idMeal}`;
+        a.textContent = 'See the recipe';
+        mealElement.appendChild(linkImg);
+        linkImg.appendChild(img);
+        mealElement.appendChild(cardBody);
+        cardBody.appendChild(h5);
+        cardBody.appendChild(br);
+        cardBody.appendChild(span);
+        span.appendChild(a);
+        results.appendChild(mealElement);
         }
         );
+        
 }
 
 // call api and get results
@@ -124,7 +149,7 @@ function searchMeals(search) {
                 // show meals in container
                 showMeals(meals);
                 hideLoader();
-            })
+              })
     }
 }
 
@@ -193,42 +218,6 @@ function showMeals(meals) {
     }
 }
 
-
-// function to show meals in container
-function random() {
-    results.textContent = '';
-    const meal = localStorage.getItem('meal');
-    if (meal) {
-        const meal = JSON.parse(meal);
-        const mealElement = document.createElement('div');
-        mealElement.className = 'card card-meal m-3';
-        mealElement.style.width = '28rem';
-        const linkImg = document.createElement('a');
-        linkImg.href = `steps.html?id=${meal.idMeal}`;
-        const img = document.createElement('img');
-        img.src = meal.strMealThumb;
-        img.alt = meal.strMeal;
-        const cardBody = document.createElement('div');
-        cardBody.className = 'card-body';
-        const h5 = document.createElement('h5');
-        h5.className = 'card-title';
-        h5.textContent = meal.strMeal;
-        const br = document.createElement('br');
-        const span = document.createElement('span');
-        span.className = 'read-more';
-        const a = document.createElement('a');
-        a.href = `steps.html?id=${meal.idMeal}`;
-        a.textContent = 'See the recipe';
-        mealElement.appendChild(linkImg);
-        linkImg.appendChild(img);
-        mealElement.appendChild(cardBody);
-        cardBody.appendChild(h5);
-        cardBody.appendChild(br);
-        cardBody.appendChild(span);
-        span.appendChild(a);
-        results.appendChild(mealElement);
-    }
-}
 
 
 //consumir api y mostrar modal con la receta

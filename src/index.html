@@ -26,8 +26,7 @@
         <button id="search-button2" class="search-button" disabled="true">Search</button>
       </div>
       <div class="banner-span">
-        <span>Are you hungry? Try with a <a class="button-random" data-toggle="modal"
-            data-target="#browserModalCenter">random</a> recipe!</span>
+        <span>Are you hungry? Try with a <a class="ramdomAnchor">random</a> recipe!</span>
       </div>
     </nav>
   </header>
@@ -51,8 +50,7 @@
       <!-- <button class="search-button" data-toggle="modal" data-target="#browserModalCenter">Search</button> -->
     </div>
     <div class="banner-span">
-      <span>Are you hungry? Try with a <a class="button-random" data-toggle="modal"
-          data-target="#browserModalCenter">random</a> recipe!</span>
+      <span>Are you hungry? Try with a <a class="ramdomAnchor">random</a> recipe!</span>
     </div>
   </main>
 
@@ -121,7 +119,6 @@
     </div>
   </section>
 
-  <div class="spinner-border"></div>
 
   <footer class=" footer flex-shrink-0 py-4 text-white-50">
     <div class="row">
@@ -153,10 +150,22 @@
   <script>
     const navbar = document.getElementById('navbar')
 
+
     window.addEventListener('scroll', () => {
     const scrolled = window.scrollY
     scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
   })
+
+  const randomAnchor = document.querySelectorAll('.ramdomAnchor')
+  localStorage.setItem('meals', '');
+
+  randomAnchor.forEach(element => {
+    element.addEventListener('click',()=>{
+    localStorage.setItem("randomA", 1);
+    localStorage.setItem('meals', '');
+    window.location.href = "random.html";
+  })
+  });
 
         //banner
     const searchInput = document.getElementById('search-input');
@@ -172,6 +181,7 @@
 
     searchButton.addEventListener('click', () => {
       localStorage.setItem('search', searchInput.value);
+      localStorage.setItem("randomA", 0);
       searchInput.value = '';
       window.location.href = "random.html";
     });
@@ -191,42 +201,11 @@
 
     searchButton2.addEventListener('click', () => {
       localStorage.setItem('search', searchInput2.value);
+      localStorage.setItem("randomA", 0);
       searchInput2.value = '';
       window.location.href = "random.html";
     });
 
-
-    //consumir api y mostrar modal con la receta
-    const urlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php'
-
-    const buttonRandom = document.querySelector('.button-random');
-    buttonRandom.addEventListener('click', () => {
-      fetch(urlRandom)
-        .then(response => response.json())
-        .then(data => {
-          const recipe = data.meals[0];
-          console.log(recipe + 'hola');
-          const recipeContent = document.getElementById('recipe-content');
-          let html = `
-      <div class="modal-header">
-      <h5 class="modal-title" id="browserModalLongTitle">${recipe.strMeal}</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      </div>
-      <div class="modal-body">
-      <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" width="50%">
-      <p>${recipe.strInstructions}</p>
-      </div>
-      <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <a href="${recipe.strYoutube}" target = "_blank" class="btn btn-primary modal-continue-button">See steps</a>
-      </div>
-      `;
-          recipeContent.innerHTML = html;
-        })
-        .catch(error => console.log(error));
-    });
 
   </script>
 
