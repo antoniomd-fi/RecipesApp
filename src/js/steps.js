@@ -15,8 +15,10 @@ const searchButton = document.getElementById('search-button');
 searchInput.addEventListener('keyup', function (e) {
     if (searchInput.value.length > 0) {
         searchButton.disabled = false;
+        searchButton.style.pointerEvents = 'auto';
     } else {
         searchButton.disabled = true;
+        searchButton.style.pointerEvents = 'none';
     }
 });
 
@@ -91,36 +93,3 @@ function showRecipe() {
     instructions.textContent = recipe.strInstructions;
     strInstructions.appendChild(instructions);
 }
-
-
-//consumir api y mostrar modal con la receta
-const urlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php'
-
-const buttonRandom = document.querySelector('.button-random');
-buttonRandom.addEventListener('click', () => {
-  fetch(urlRandom)
-    .then(response => response.json())
-    .then(data => {
-      const recipe = data.meals[0];
-      console.log(recipe+'hola');
-      const recipeContent = document.getElementById('recipe-content');
-      let html = `
-      <div class="modal-header">
-      <h5 class="modal-title" id="browserModalLongTitle">${recipe.strMeal}</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      </div>
-      <div class="modal-body">
-      <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" width="50%">
-      <p>${recipe.strInstructions}</p>
-      </div>
-      <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <a href="${recipe.strYoutube}" target = "_blank" class="btn btn-primary modal-continue-button">See steps</a>
-      </div>
-      `;
-    recipeContent.innerHTML = html;
-    })
-    .catch(error => console.log(error));
-});
