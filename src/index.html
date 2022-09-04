@@ -58,7 +58,7 @@
 
   <div class="modal fade" id="browserModalCenter" tabindex="-1" role="dialog" aria-labelledby="browserModalCenterTitle"
     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
       <div id="recipe-content" class="modal-content">
       </div>
     </div>
@@ -165,8 +165,10 @@
     searchInput.addEventListener('keyup', function (e) {
       if (searchInput.value.length > 0) {
         searchButton.disabled = false;
+        searchButton.style.pointerEvents = 'auto';
       } else {
         searchButton.disabled = true;
+        searchButton.style.pointerEvents = 'none';
       }
     });
 
@@ -184,8 +186,11 @@
     searchInput2.addEventListener('keyup', function (e) {
       if (searchInput2.value.length > 0) {
         searchButton2.disabled = false;
+        searchButton2.style.pointerEvents = 'auto';
       } else {
         searchButton2.disabled = true;
+        searchButton.style.pointerEvents = 'none';
+
       }
     });
 
@@ -205,7 +210,6 @@
         .then(response => response.json())
         .then(data => {
           const recipe = data.meals[0];
-          console.log(recipe + 'hola');
           const recipeContent = document.getElementById('recipe-content');
           let html = `
       <div class="modal-header">
@@ -215,7 +219,7 @@
       </button>
       </div>
       <div class="modal-body">
-      <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" width="50%">
+      <img class="mx-auto d-block" src="${recipe.strMealThumb}" alt="${recipe.strMeal}" style="width:50%">
       <p>${recipe.strInstructions}</p>
       </div>
       <div class="modal-footer">

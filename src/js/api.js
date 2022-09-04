@@ -90,8 +90,8 @@ function getMeal() {
 }
 
 // get input and button
-const input = document.getElementById('input');
-const button = document.getElementById('button');
+const input = document.getElementById('search-input');
+const button = document.getElementById('search-button');
 
 // get container for results
 const results = document.getElementById('results');
@@ -100,8 +100,11 @@ const results = document.getElementById('results');
 input.addEventListener('keyup', function () {
     if (input.value.length > 0) {
         button.disabled = false;
+        button.style.pointerEvents = 'auto';
     } else {
         button.disabled = true;
+        button.style.pointerEvents = 'none';
+
     }
 });
 // add event listener to button
@@ -249,7 +252,7 @@ buttonRandom2.addEventListener('click', () => {
       </button>
       </div>
       <div class="modal-body">
-      <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" width="50%">
+      <img class="mx-auto rounded block" src="${recipe.strMealThumb}" alt="${recipe.strMeal}" style="width:50%">
       <p>${recipe.strInstructions}</p>
       </div>
       <div class="modal-footer">
