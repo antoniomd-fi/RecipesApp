@@ -17,6 +17,10 @@
     text-decoration: none;
 }
 
+#navbar {
+  transition: top 0.7s;
+}
+
 /*
 .row {
     padding: 0 0 4rem 0;
@@ -93,18 +97,9 @@
 
 .container-meal {
   display: flex;
-    height: 400px;
-   justify-content: center;
-}
-
-.flex-container-meals {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: center;
-    overflow: auto;
-    flex-direction: row;
+  height: 170vh;
+  justify-content: center;
+  overflow: scroll;
 }
 
 .read-more a {
@@ -124,6 +119,7 @@
     text-align: center;
     /*background-image: linear-gradient(rgba(7, 9, 14, .75), rgba(5, 7, 12, 0.75)), url(/assets/foodexample.webp);*/
     color: white;
+    z-index: 2;
 }
 
 .footer h2 {

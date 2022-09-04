@@ -254,5 +254,4 @@ buttonRandom2.addEventListener('click', () => {
         .catch(error => console.log(error));
 });
 
-
 export { inicial }; // beggining of the page

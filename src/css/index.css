@@ -73,7 +73,6 @@ header{
 }
 
 .banner-titles {
-
     margin-bottom: 80px;
 }
 
@@ -83,6 +82,10 @@ header{
 
 .banner-titles .subtitle {
     font-size: 1.7rem;
+}
+
+.banner-titles .title strong{
+    color: var(--color-wine-400);
 }
 
 .banner-browser {
