@@ -18,12 +18,18 @@ This project is part of phase 2 of the Santander and BEDU scholarship.
 ## 1. Mockups
 
 **Home Page**
+
+
 <img width="662" alt="home page" src="https://user-images.githubusercontent.com/73664479/188329268-71a5376e-4a6b-46d4-8865-0553bfda6f3b.png">
 
 **Results Page**
+
+
 <img width="627" alt="results page" src="https://user-images.githubusercontent.com/73664479/188329585-f1f9f781-cd2b-4f3b-8706-bc8583ddaf5c.png">
 
 **Recipe Page**
+
+
 <img width="679" alt="recipe page" src="https://user-images.githubusercontent.com/73664479/188329787-931b8fc3-a9b6-4088-88eb-e58dcd1e7d90.png">
 
 [Link of design](figma.com/file/0EnRdsCDXA1gJ80lgX69vI/DWJS_F2_Santander?node-id=46%3A2)
