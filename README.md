@@ -115,4 +115,3 @@ Just like pressing the random button it displays a random recipe.
 
 - [EduCastilloHerrera](https://github.com/EduCastilloHerrera)
 
-
