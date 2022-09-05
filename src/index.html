@@ -9,7 +9,8 @@
   <!-- Bootstrap CSS -->
 
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Recipes</title>
@@ -53,26 +54,28 @@
 
 
     window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY
-    scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
-  })
+      const scrolled = window.scrollY
+      scrolled > 600 ? navbar.style.display = "block" : navbar.style.display = "none"
+    })
 
-  const randomAnchor = document.querySelectorAll('.ramdomAnchor')
-  localStorage.setItem('meals', '');
-
-  randomAnchor.forEach(element => {
-    element.addEventListener('click',()=>{
-    localStorage.setItem("randomA", 1);
+    const randomAnchor = document.querySelectorAll('.ramdomAnchor')
     localStorage.setItem('meals', '');
-    window.location.href = "random.html";
-  })
-  });
 
-        //banner
+    randomAnchor.forEach(element => {
+      element.addEventListener('click', () => {
+        localStorage.setItem("randomA", 1);
+        localStorage.setItem('meals', '');
+        window.location.href = "random.html";
+      })
+    });
+
+    //banner
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
 
     searchInput.addEventListener('keyup', function (e) {
+      var keycode = e.keyCode || e.which;
+      
       if (searchInput.value.length > 0) {
         searchButton.disabled = false;
         searchButton.style.pointerEvents = 'auto';
@@ -80,7 +83,16 @@
         searchButton.disabled = true;
         searchButton.style.pointerEvents = 'none';
       }
+      
+      if (keycode == 13) {
+        localStorage.setItem('search', searchInput.value);
+        localStorage.setItem("randomA", 0);
+        searchInput.value = '';
+        window.location.href = "random.html";
+      }
     });
+
+
 
     searchButton.addEventListener('click', () => {
       localStorage.setItem('search', searchInput.value);
@@ -90,27 +102,6 @@
     });
     //banner
 
-    //navbar
-    const searchInput2 = document.getElementById('search-input2');
-    const searchButton2 = document.getElementById('search-button2');
-
-    searchInput2.addEventListener('keyup', function (e) {
-      if (searchInput2.value.length > 0) {
-        searchButton2.disabled = false;
-        searchButton2.style.pointerEvents = 'auto';
-      } else {
-        searchButton2.disabled = true;
-        searchButton.style.pointerEvents = 'none';
-
-      }
-    });
-
-    searchButton2.addEventListener('click', () => {
-      localStorage.setItem('search', searchInput2.value);
-      localStorage.setItem("randomA", 0);
-      searchInput2.value = '';
-      window.location.href = "random.html";
-    });
 
   </script>
 
@@ -124,7 +115,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-    
+
 </body>
 
 </html>

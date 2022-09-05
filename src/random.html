@@ -104,6 +104,19 @@
       }
       prevScrollpos = currentScrollPos
     }
+
+
+    const searchInput = document.getElementById('search-input');
+
+    searchInput.addEventListener('keyup', function (e) {
+      var keycode = e.keyCode || e.which;
+         if (keycode == 13) {
+        localStorage.setItem('search', searchInput.value);
+        localStorage.setItem("randomA", 0);
+        searchInput.value = '';
+        window.location.href = "random.html";
+      }
+    });
   </script>
 
 
