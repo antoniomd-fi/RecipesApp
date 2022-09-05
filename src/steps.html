@@ -152,7 +152,7 @@ searchInput.addEventListener('keyup', function (e) {
                 .catch(error => console.log(error));
         });
 
-        const prevScrollpos = window.pageYOffset;
+        var prevScrollpos = window.pageYOffset;
         window.onscroll = function () {
             var currentScrollPos = window.pageYOffset;
             if (prevScrollpos > currentScrollPos) {

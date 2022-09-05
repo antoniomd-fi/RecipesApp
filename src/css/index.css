@@ -382,11 +382,9 @@ header{
 }
 
 .modal-continue-button:hover{
-    color: #9C0F48;
-    background-color: #e2dcdc;
-    font-weight: 700;
-    
+    background: #840e3d;    
 }
+
 
 @media (max-width:980px){
     .modal-content img{

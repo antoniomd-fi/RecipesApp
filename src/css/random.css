@@ -31,8 +31,8 @@
 
 .grid{
   display: grid;
-  column-gap: 7rem;
-  row-gap: 5rem;
+  column-gap: 3rem;
+  row-gap: 3.5rem;
   grid-auto-flow: dense;
   grid-auto-rows: 22rem;
   grid-template-columns: repeat(3, 1fr);
@@ -57,7 +57,7 @@
 
 
 .card-meal {
-    width: 100%;
+    /* width: 100%; */
     border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
