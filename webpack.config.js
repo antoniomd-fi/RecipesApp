@@ -4,7 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   // configuracion de entrada y salida del bundler
   entry: {
-    bundle: './src/js/index.js'
+    index: './src/js/index.js',
+    random: './src/js/random.js',
+    steps: './src/js/steps.js',
+    autocomplete: './src/js/autocomplete.js',
+    api: './src/js/api.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -15,7 +19,17 @@ module.exports = {
       title: 'Webpack App',
       filename: 'index.html',
       template: './src/index.html'
-    })
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Steps',
+      filename: 'steps.html',
+      template: './src/steps.html'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Random',
+      filename: 'random.html',
+      template: './src/random.html'
+    }),
   ],
   // Estilos para la pagina
   module: {
