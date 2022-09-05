@@ -2,7 +2,7 @@
 
 <img width="1438" alt="" src="https://user-images.githubusercontent.com/73664479/188329960-09c4ad86-cd06-41e1-b1dc-56acfcbed7ef.png">
 
-App to search and consult different recipes.
+The best recipe browser 
 
 This project is part of phase 2 of the Santander and BEDU scholarship.
 
@@ -107,11 +107,13 @@ Just like pressing the random button it displays a random recipe.
 <a name="authors"></a>
 ## 5. Authors
 
-- [VictorSosa-dev](https://www.github.com/VictorSosa-dev)
+- Victor Sosa [VictorSosa-dev](https://www.github.com/VictorSosa-dev)
 
-- [antoniomd-fi](https://github.com/antoniomd-fi)
+- Antonio Martin [antoniomd-fi](https://github.com/antoniomd-fi)
 
-- [gerhercar21](https://github.com/gerhercar21)
+- Gerardo Herrera [gerhercar21](https://github.com/gerhercar21)
 
-- [EduCastilloHerrera](https://github.com/EduCastilloHerrera)
+- Eduardo Castillo [EduCastilloHerrera](https://github.com/EduCastilloHerrera)
+
+- Alejandro Gerónimo [ElMandu](https://github.com/ElMandu)
 
