@@ -32,7 +32,7 @@ This project is part of phase 2 of the Santander and BEDU scholarship.
 
 <img width="679" alt="recipe page" src="https://user-images.githubusercontent.com/73664479/188329787-931b8fc3-a9b6-4088-88eb-e58dcd1e7d90.png">
 
-[Link of design](figma.com/file/0EnRdsCDXA1gJ80lgX69vI/DWJS_F2_Santander?node-id=46%3A2)
+[Link of design](https://www.figma.com/proto/0EnRdsCDXA1gJ80lgX69vI/DWJS_F2_Santander?page-id=46%3A2&node-id=124%3A400&starting-point-node-id=124%3A400)
 
 
 <a name="technologies"></a>
